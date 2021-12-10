@@ -1,13 +1,14 @@
 import 'package:unique_login/data/dto/user_dto.dart';
-import 'get_all_users_repository_data.dart';
+import 'package:unique_login/domain/entities/user_entity.dart';
+import 'package:unique_login/domain/repositories/get_all_users_repository.dart';
 
-class GetAllUsersRepositoryDataImp implements GetAllUsersRepositoryData {
-  final GetAllUsersRepositoryData _getAllUsersRepositoryData;
+class GetAllUsersRepositoryDataImp implements GetAllUsersRepository {
+  final GetAllUsersRepository _getAllUsersRepository;
 
-  GetAllUsersRepositoryDataImp(this._getAllUsersRepositoryData);
+  GetAllUsersRepositoryDataImp(this._getAllUsersRepository);
 
   @override
-  Future<List<UserDto>> call() async {
-    return await _getAllUsersRepositoryData();
+  Future<List<UserEntity>> call() async {
+    return await _getAllUsersRepository();
   }
 }
