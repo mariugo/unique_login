@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'users_list_screen.dart';
 import '/presentation/ui/theme/design_system.dart';
 import '/presentation/ui/widgets/wave_widget.dart';
-import '/presentation/ui/screens/users_list.dart';
 import '/presentation/ui/widgets/button_widget.dart';
 import '/presentation/ui/widgets/custom_input_field.dart';
 import '/usecases/login_user/log_in_user_imp.dart';
 import '/usecases/login_user/log_in_user_usecase.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({Key? key}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _HomeScreenState extends State<HomeScreen> {
   String? _email;
   String? _password;
   LogInUserUseCase logInUserUseCase = LogInUserUseCaseImp();
@@ -24,8 +24,8 @@ class _HomeViewState extends State<HomeView> {
 
   _loginUser(String email, String password) {
     if (logInUserUseCase(email, password)) {
-      Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => const UsersList()));
+      Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => const UserListScreen()));
     } else {
       const snackBar = SnackBar(content: Text('Email ou senha inválidos'));
       ScaffoldMessenger.of(context).showSnackBar(snackBar);

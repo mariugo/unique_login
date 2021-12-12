@@ -3,19 +3,17 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
 import '/data/dto/user_dto.dart';
-import '/presentation/controllers/user_controller.dart';
 import '/presentation/ui/theme/design_system.dart';
 import '/presentation/ui/widgets/card_widget.dart';
 
-class UsersList extends StatefulWidget {
-  const UsersList({Key? key}) : super(key: key);
+class UserListScreen extends StatefulWidget {
+  const UserListScreen({Key? key}) : super(key: key);
 
   @override
-  State<UsersList> createState() => _UsersListState();
+  State<UserListScreen> createState() => _UserListScreenState();
 }
 
-class _UsersListState extends State<UsersList> {
-  final UserController userController = UserController();
+class _UserListScreenState extends State<UserListScreen> {
   ValueNotifier<List<UserDto>> userList = ValueNotifier<List<UserDto>>([]);
 
   addUsers() async {
