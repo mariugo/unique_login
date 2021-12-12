@@ -1,5 +1,5 @@
 class UserEntity {
-  final int id;
+  final int? id;
   final String name;
   final String username;
   final String email;
@@ -7,7 +7,7 @@ class UserEntity {
   final String website;
 
   UserEntity({
-    required this.id,
+    this.id,
     required this.name,
     required this.username,
     required this.email,

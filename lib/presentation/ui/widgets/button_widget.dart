@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:unique_login/presentation/ui/theme/design_system.dart';
+import '/presentation/ui/theme/design_system.dart';
 
 class ButtonWidget extends StatelessWidget {
   final String title;
@@ -40,9 +40,7 @@ class ButtonWidget extends StatelessWidget {
               child: Text(
                 title,
                 style: TextStyle(
-                  color: hasBorder
-                      ? DesignSystem.primaryColor
-                      : DesignSystem.secondaryColor,
+                  color: hasBorder ? DesignSystem.primaryColor : Colors.white,
                   fontWeight: FontWeight.w600,
                   fontSize: 16.0,
                 ),

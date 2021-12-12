@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:unique_login/presentation/ui/theme/design_system.dart';
+
+import '/presentation/ui/theme/design_system.dart';
 
 class CustomInputField extends StatelessWidget {
   final String labelText;

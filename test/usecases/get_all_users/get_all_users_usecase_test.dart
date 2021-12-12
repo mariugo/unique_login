@@ -8,7 +8,7 @@ import 'package:unique_login/usecases/get_all_users/get_all_users_usecase.dart';
 
 class GetAllUsersRepositoryImp implements GetAllUsersRepository {
   @override
-  Future<List<UserEntity>> call() async {
+  List<UserEntity> call() {
     final list = [
       UserEntity(
           id: 1,

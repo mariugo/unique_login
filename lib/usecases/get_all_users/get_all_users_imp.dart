@@ -8,7 +8,7 @@ class GetAllUsersImp implements GetAllUsersUseCase {
   GetAllUsersImp(this._getAllUsersRepository);
 
   @override
-  Future<List<UserEntity>> call() async {
-    return await _getAllUsersRepository();
+  List<UserEntity> call() {
+    return _getAllUsersRepository();
   }
 }

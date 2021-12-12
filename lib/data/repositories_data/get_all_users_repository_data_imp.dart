@@ -7,7 +7,7 @@ class GetAllUsersRepositoryDataImp implements GetAllUsersRepository {
   GetAllUsersRepositoryDataImp(this._getAllUsersRepository);
 
   @override
-  Future<List<UserEntity>> call() async {
-    return await _getAllUsersRepository();
+  List<UserEntity> call() {
+    return _getAllUsersRepository();
   }
 }
