@@ -1,4 +1,3 @@
-import 'package:unique_login/data/dto/user_dto.dart';
 import 'package:unique_login/domain/entities/user_entity.dart';
 import 'package:unique_login/domain/repositories/get_all_users_repository.dart';
 
