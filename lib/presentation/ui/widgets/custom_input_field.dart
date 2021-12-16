@@ -53,7 +53,7 @@ class CustomInputField extends StatelessWidget {
   }
 }
 
-class CustomTextField extends StatelessWidget {
+class CustomTextField extends StatefulWidget {
   const CustomTextField({
     Key? key,
     required this.onEditingComplete,
@@ -70,12 +70,18 @@ class CustomTextField extends StatelessWidget {
   final IconData? icon;
 
   @override
+  State<CustomTextField> createState() => _CustomTextFieldState();
+}
+
+class _CustomTextFieldState extends State<CustomTextField> {
+  @override
   Widget build(BuildContext context) {
     return TextField(
-      controller: controller,
-      onEditingComplete: () => onEditingComplete(controller.value.text),
+      controller: widget.controller,
+      onEditingComplete: () =>
+          widget.onEditingComplete(widget.controller.value.text),
       cursorColor: DesignSystem.secondaryColor,
-      obscureText: obscureText,
+      obscureText: widget.obscureText,
     );
   }
 }
